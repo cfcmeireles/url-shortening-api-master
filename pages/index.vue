@@ -1,4 +1,5 @@
 <template>
+  <UrlShortener />
   <div>
     Features Pricing Resources Login Sign Up More than just shorter links Build
     your brand’s recognition and get detailed insights on how your links are
@@ -22,8 +23,12 @@
     </div>
   </div>
 </template>
+  
+<script>
+import UrlShortener from "~/components/UrlShortener.vue";
+</script>
 
-<style>
+  <style>
 .attribution {
   font-size: 11px;
   text-align: center;
