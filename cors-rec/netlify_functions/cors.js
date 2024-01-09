@@ -44,6 +44,8 @@ exports.handler = async (event, context) => {
     body: response_text,
     headers: {
       "content-type": String(headers["content-type"]) || "text/plain",
+      "Access-Control-Allow-Origin":
+        "https://shiny-fenglisu-6e15ea.netlify.app",
     },
     multiValueHeaders: {
       "set-cookie": cookie_header || [],
