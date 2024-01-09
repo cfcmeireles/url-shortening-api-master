@@ -39,18 +39,6 @@ exports.handler = async (event, context) => {
   var cookie_header = null;
   if (headers["set-cookie"]) cookie_header = headers["set-cookie"];
 
-  if (event.httpMethod.toUpperCase() === "OPTIONS") {
-    return {
-      statusCode: 200,
-      headers: {
-        "Access-Control-Allow-Origin":
-          "https://shiny-fenglisu-6e15ea.netlify.app",
-        "Access-Control-Allow-Methods": "GET, POST, OPTIONS", // Add other allowed methods
-        "Access-Control-Allow-Headers": "Content-Type", // Add other allowed headers
-      },
-    };
-  }
-
   return {
     statusCode: 200,
     body: response_text,
