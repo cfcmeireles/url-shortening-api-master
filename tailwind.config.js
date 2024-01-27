@@ -20,6 +20,7 @@ export default {
       colors: {
         gray: "#bfbfbf",
         cyan: "#2acfcf",
+        darkviolet: "#3b3054",
       },
       fontSize: {
         base: "18px",
