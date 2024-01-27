@@ -1,19 +1,24 @@
 <template>
-  <UrlShortener />
-  <div>
-    Features Pricing Resources Login Sign Up More than just shorter links Build
-    your brand’s recognition and get detailed insights on how your links are
-    performing. Get Started Shorten a link here... Shorten It! Advanced
-    Statistics Track how your links are performing across the web with our
-    advanced statistics dashboard. Brand Recognition Boost your brand
-    recognition with each click. Generic links don’t mean a thing. Branded links
-    help instil confidence in your content. Detailed Records Gain insights into
-    who is clicking your links. Knowing when and where people engage with your
-    content helps inform better decisions. Fully Customizable Improve brand
-    awareness and content discoverability through customizable links,
-    supercharging audience engagement. Boost your links today Get Started
-    Features Link Shortening Branded Links Analytics Resources Blog Developers
-    Support Company About Our Team Careers Contact
+  <main class="font-poppins">
+    <Header />
+    <div class="grid grid-cols-2">
+      <div class="flex flex-col justify-center mx-auto">
+        <h1 class="text-6xl font-bold justify-center flex">
+          More than just <br />shorter links
+        </h1>
+        <p class="text-gray font-bold text-base justify-center flex">
+          Build your brand's recognition and get detailed <br />
+          insights on how your links are performing.
+        </p>
+        <button class="rounded-2xl w-32 mt-3 bg-cyan p-1.5 text-white">
+          Get Started
+        </button>
+      </div>
+      <div>
+        <img src="/images/illustration-working.svg" />
+      </div>
+    </div>
+    <UrlShortener />
 
     <div class="attribution">
       Challenge by
@@ -21,11 +26,12 @@
         >Frontend Mentor</a
       >. Coded by <a href="#">Your Name Here</a>.
     </div>
-  </div>
+  </main>
 </template>
   
 <script>
 import UrlShortener from "~/components/UrlShortener.vue";
+import Header from "~/components/Header.vue";
 </script>
 
   <style>

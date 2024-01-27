@@ -18,24 +18,23 @@ export default {
   },
   methods: {
     fetchData() {
-      const url = encodeURIComponent(this.longUrl);
-
+      const apiKey =
+        "irt9NZqGaKgkPX1XKV5tr8Ygzn1fdpJxR3Gq8qRgNz4NaUgTf9vvDj3hxL0m";
       const shortUrlApi = {
         method: "POST",
         headers: {
+          Authorization: `Bearer ${apiKey}`,
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ long_url: url }),
+        body: JSON.stringify({
+          url: this.longUrl,
+        }),
       };
 
-      fetch("https://cleanuri.com/api/v1/shorten", shortUrlApi)
+      fetch("https://api.tinyurl.com/create", shortUrlApi)
         .then((response) => response.json())
         .then((data) => {
-          if (data && data.result_url) {
-            this.postId = data.result_url;
-          } else {
-            console.error("Invalid response format:", data);
-          }
+          this.postId = data.data.tiny_url;
         })
         .catch((error) => console.error("Fetch Error:", error));
     },

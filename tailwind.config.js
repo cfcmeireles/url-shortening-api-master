@@ -9,7 +9,22 @@ export default {
     "./error.vue",
   ],
   theme: {
-    extend: {},
+    screens: {
+      sm: "375px",
+      lg: "1440px",
+    },
+    fontFamily: {
+      poppins: ["Poppins", "sans-serif"],
+    },
+    extend: {
+      colors: {
+        gray: "#bfbfbf",
+        cyan: "#2acfcf",
+      },
+      fontSize: {
+        base: "18px",
+      },
+    },
   },
   plugins: [],
 };
