@@ -11,7 +11,7 @@
 
         <input
           class="font-bold text-sm z-50 flex h-10 rounded-md p-5"
-          :class="this.errorMsg ? 'error' : ''"
+          :class="errorMsg ? 'error' : ''"
           style="width: 30rem"
           v-model="userInput"
           placeholder="Shorten a link here..."
@@ -25,7 +25,7 @@
         <p
           class="z-50 absolute mt-16 text-xs italic text-red-500 font-bold"
           style="margin-left: -525px"
-          v-if="this.errorMsg"
+          v-if="errorMsg"
         >
           Please add a link
         </p>
