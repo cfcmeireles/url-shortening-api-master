@@ -12,11 +12,11 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
-    "nuxt": "^3.9.0",
+    "nuxt": "^3.8.2",
     "nuxt-security": "^1.0.0",
     "postcss": "^8.4.33",
     "tailwindcss": "^3.4.1",
-    "vercel": "^33.2.0",
+    "vercel": "^32.3.0",
     "vue": "^3.4.5",
     "vue-router": "^4.2.5"
   },

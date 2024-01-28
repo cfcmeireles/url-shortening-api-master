@@ -41,8 +41,10 @@
           <span class="text-cyan">{{ url.short }}</span>
           <button
             class="z-50 rounded-md w-24 bg-cyan p-1.5 text-white font-bold"
+            :class="url.isCopied ? 'copied' : ''"
+            @click="copyToClipboard(url)"
           >
-            Copy
+            {{ url.isCopied ? "Copied!" : "Copy" }}
           </button>
         </div>
       </div>
@@ -85,7 +87,6 @@ export default {
           url: this.longUrl,
         }),
       };
-
       fetch("https://api.tinyurl.com/create", shortUrlApi)
         .then((response) => response.json())
         .then((data) => {
@@ -95,6 +96,22 @@ export default {
           });
         })
         .catch((error) => console.error("Fetch Error:", error));
+    },
+    copyToClipboard(url) {
+      const textToCopy = url.short;
+      const textarea = document.createElement("textarea");
+      textarea.value = textToCopy;
+      document.body.appendChild(textarea);
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+      url.isCopied = true;
+      this.saveUrl.forEach((otherUrl) => {
+        if (otherUrl !== url) {
+          otherUrl.isCopied = false;
+        }
+      });
     },
   },
 };
@@ -111,5 +128,13 @@ button:hover {
 .error::placeholder {
   color: red;
   opacity: 0.5;
+}
+
+.copied {
+  background: hsl(257, 27%, 26%);
+}
+
+.copied:hover {
+  background: hsl(257, 27%, 26%);
 }
 </style>
