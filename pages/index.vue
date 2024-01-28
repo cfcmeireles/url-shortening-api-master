@@ -32,7 +32,7 @@
       </p>
     </div>
     <div class="flex flex-row justify-center items-center">
-      <BoxFrames>
+      <BoxFrames :icons="{ brandRecognition: true }">
         <template #title>Brand Recognition</template>
         <template #description>
           Boost your brand recognition with eachclick. Generic links don't mean
@@ -41,7 +41,7 @@
         >
       </BoxFrames>
       <div class="connecting-line"></div>
-      <BoxFrames style="margin-top: 90px">
+      <BoxFrames style="margin-top: 90px" :icons="{ detailedRecords: true }">
         <template #title>Detailed Records</template>
         <template #description>
           Gain insights into who is clicking your links. Knowing when and where
@@ -49,7 +49,7 @@
         </template>
       </BoxFrames>
       <div class="connecting-line"></div>
-      <BoxFrames style="margin-top: 180px">
+      <BoxFrames style="margin-top: 180px" :icons="{ fullyCustomizable: true }">
         <template #title>Fully Customizable</template>
         <template #description>
           Improve brand awareness and content discoverability through
@@ -57,24 +57,25 @@
         </template>
       </BoxFrames>
     </div>
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+    <div class="mt-24 relative flex items-center justify-center">
+      <h2 class="text-3xl font-bold text-white absolute bottom-24">
+        Boost your links today
+      </h2>
+      <button
+        class="rounded-2xl w-32 bg-cyan p-1.5 text-white font-bold absolute bottom-12"
+      >
+        Get Started
+      </button>
+      <img
+        class="w-full h-48 bg-darkviolet"
+        src="/images/bg-boost-desktop.svg"
+      />
     </div>
+    <Footer />
   </main>
 </template>
 
   <style scoped>
-.attribution {
-  font-size: 11px;
-  text-align: center;
-}
-.attribution a {
-  color: hsl(228, 45%, 44%);
-}
-
 button:hover {
   background: hsl(180, 80%, 80%);
 }
