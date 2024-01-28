@@ -21,6 +21,7 @@ export default {
         gray: "#bfbfbf",
         cyan: "#2acfcf",
         darkviolet: "#3b3054",
+        grayviolet: "#9e9aa7",
       },
       fontSize: {
         base: "18px",
