@@ -1,14 +1,21 @@
 <template>
   <main class="font-poppins h-screen">
     <Header />
-    <div class="grid grid-cols-2">
+    <div
+      class="flex flex-col-reverse lg:flex-col items-center lg:grid lg:justify-center"
+      style="grid-template-columns: 800px 800px"
+    >
       <div class="flex flex-col justify-center mx-auto">
-        <h1 class="text-6xl font-bold flex">
+        <h1
+          class="font-bold text-3xl mt-8 lg:mt-0 lg:text-6xl lg:flex lg:justify-center"
+        >
           More than just <br />shorter links
         </h1>
-        <p class="text-gray font-bold text-base justify-center flex">
-          Build your brand's recognition and get detailed <br />
-          insights on how your links are performing.
+        <p
+          class="text-3xl text-gray font-bold text-base mb-5 lg:mb-0 lg:justify-center lg:flex"
+        >
+          Build your brand's recognition and get detailed <br />insights on how
+          your links are performing.
         </p>
         <button
           class="rounded-2xl w-32 mt-3 bg-cyan p-1.5 text-white font-bold"
@@ -18,6 +25,7 @@
       </div>
       <div>
         <img
+          style="height: 40%"
           src="/images/illustration-working.svg"
           alt="Working illustration"
         />
@@ -84,5 +92,16 @@ button:hover {
   width: 25px;
   height: 7px;
   background-color: cyan;
+}
+
+@media (max-width: 1440px) {
+  h1,
+  h1 + p {
+    text-align: center;
+  }
+
+  button {
+    margin: 0 auto;
+  }
 }
 </style>

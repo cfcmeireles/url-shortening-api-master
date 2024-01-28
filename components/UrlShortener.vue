@@ -6,13 +6,14 @@
       <div class="flex justify-center items-center mb-12">
         <img
           class="z-0 absolute bg-darkviolet rounded-md h-28"
+          style="width: 1250px"
           src="/images/bg-shorten-desktop.svg"
         />
 
         <input
           class="font-bold text-sm z-50 flex h-10 rounded-md p-5"
           :class="errorMsg ? 'error' : ''"
-          style="width: 30rem"
+          style="width: 60rem"
           v-model="userInput"
           placeholder="Shorten a link here..."
         />
@@ -24,7 +25,7 @@
         </button>
         <p
           class="z-50 absolute mt-16 text-xs italic text-red-500 font-bold"
-          style="margin-left: -525px"
+          style="margin-left: -1000px"
           v-if="errorMsg"
         >
           Please add a link

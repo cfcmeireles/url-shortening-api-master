@@ -16,6 +16,10 @@ export default {
     fontFamily: {
       poppins: ["Poppins", "sans-serif"],
     },
+    fontWeight: {
+      normal: 400,
+      bold: 700,
+    },
     extend: {
       colors: {
         gray: "#bfbfbf",
