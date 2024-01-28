@@ -8,8 +8,10 @@
           class="z-0 absolute bg-darkviolet rounded-md h-28"
           src="/images/bg-shorten-desktop.svg"
         />
+
         <input
           class="font-bold text-sm z-50 flex h-10 rounded-md p-5"
+          :class="this.errorMsg ? 'error' : ''"
           style="width: 30rem"
           v-model="userInput"
           placeholder="Shorten a link here..."
@@ -20,6 +22,13 @@
         >
           Shorten it!
         </button>
+        <p
+          class="z-50 absolute mt-16 text-xs italic text-red-500 font-bold"
+          style="margin-left: -525px"
+          v-if="this.errorMsg"
+        >
+          Please add a link
+        </p>
       </div>
       <div>
         <div
@@ -48,14 +57,20 @@ export default {
       userInput: "",
       longUrl: "",
       saveUrl: [],
+      errorMsg: false,
     };
   },
 
   methods: {
     eraseUserInput() {
-      this.longUrl = this.userInput;
-      this.userInput = "";
-      this.fetchData();
+      if (this.userInput) {
+        this.longUrl = this.userInput;
+        this.userInput = "";
+        this.errorMsg = false;
+        this.fetchData();
+      } else {
+        this.errorMsg = true;
+      }
     },
     fetchData() {
       const apiKey =
@@ -84,3 +99,17 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+button:hover {
+  background: hsl(180, 80%, 80%);
+}
+.error {
+  border: solid red 2px;
+}
+
+.error::placeholder {
+  color: red;
+  opacity: 0.5;
+}
+</style>
