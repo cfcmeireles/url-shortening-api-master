@@ -12,7 +12,7 @@
 
         <input
           class="font-bold text-sm z-50 flex h-10 rounded-md p-5"
-          :class="errorMsg ? 'error' : ''"
+          :class="emptyInputError || invalidUrlError ? 'error' : ''"
           style="width: 60rem"
           v-model="userInput"
           placeholder="Shorten a link here..."
@@ -26,22 +26,29 @@
         <p
           class="z-50 absolute mt-16 text-xs italic text-red-500 font-bold"
           style="margin-left: -1000px"
-          v-if="errorMsg"
+          v-if="emptyInputError"
         >
           Please add a link
+        </p>
+        <p
+          class="z-50 absolute mt-16 text-xs italic text-red-500 font-bold"
+          style="margin-left: -854px"
+          v-if="invalidUrlError"
+        >
+          Please add a valid link (starting with https)
         </p>
       </div>
       <div>
         <div
           v-for="(url, index) in saveUrl"
           :key="index"
-          class="h-16 rounded-md bg-white mx-auto font-bold mt-3.5 p-5 text-sm flex items-center justify-between"
-          style="width: 740px"
+          class="h-16 rounded-md bg-white mx-auto font-bold mt-3.5 p-5 text-sm flex items-center relative"
+          style="width: 1200px"
         >
           {{ url.long }}
-          <span class="text-cyan">{{ url.short }}</span>
+          <span class="text-cyan absolute right-32">{{ url.short }}</span>
           <button
-            class="z-50 rounded-md w-24 bg-cyan p-1.5 text-white font-bold"
+            class="z-50 rounded-md w-24 bg-cyan p-1.5 text-white font-bold absolute right-5"
             :class="url.isCopied ? 'copied' : ''"
             @click="copyToClipboard(url)"
           >
@@ -60,7 +67,8 @@ export default {
       userInput: "",
       longUrl: "",
       saveUrl: [],
-      errorMsg: false,
+      emptyInputError: false,
+      invalidUrlError: false,
     };
   },
 
@@ -69,15 +77,17 @@ export default {
       if (this.userInput) {
         this.longUrl = this.userInput;
         this.userInput = "";
-        this.errorMsg = false;
+        this.emptyInputError = false;
         this.fetchData();
       } else {
-        this.errorMsg = true;
+        this.emptyInputError = true;
+        this.invalidUrlError = false;
       }
     },
     fetchData() {
       const apiKey =
         "irt9NZqGaKgkPX1XKV5tr8Ygzn1fdpJxR3Gq8qRgNz4NaUgTf9vvDj3hxL0m";
+      const urlPattern = /^(ftp|http|https):\/\/[^ "]+$/;
       const shortUrlApi = {
         method: "POST",
         headers: {
@@ -88,9 +98,14 @@ export default {
           url: this.longUrl,
         }),
       };
+      if (!urlPattern.test(this.longUrl)) {
+        this.invalidUrlError = true;
+        return;
+      }
       fetch("https://api.tinyurl.com/create", shortUrlApi)
         .then((response) => response.json())
         .then((data) => {
+          this.invalidUrlError = false;
           this.saveUrl.push({
             long: this.longUrl,
             short: data.data.tiny_url,
