@@ -1,6 +1,9 @@
 <template>
   <main class="h-96 bg-blackviolet">
-    <div class="flex items-start justify-around pt-20">
+    <div
+      class="grid pt-20 justify-center"
+      style="grid-template-columns: 300px 200px 200px 200px 300px"
+    >
       <img src="/images/logo-white.svg" />
       <FooterList>
         <template #title>Features</template>
@@ -21,7 +24,7 @@
         <template #third-item>Careers</template>
         <template #fourth-item>Contact</template>
       </FooterList>
-      <div class="flex flex-row gap-x-5">
+      <div class="flex flex-row gap-x-5 justify-end">
         <svg
           class="cursor-pointer"
           xmlns="http://www.w3.org/2000/svg"

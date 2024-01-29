@@ -6,7 +6,7 @@
       <div class="flex justify-center items-center mb-12">
         <img
           class="z-0 absolute bg-darkviolet rounded-md h-28"
-          style="width: 1250px"
+          style="width: 1200px"
           src="/images/bg-shorten-desktop.svg"
         />
 

@@ -3,7 +3,7 @@
     <Header />
     <div
       class="flex flex-col-reverse lg:flex-col items-center lg:grid lg:justify-center"
-      style="grid-template-columns: 800px 800px"
+      style="grid-template-columns: repeat(2, 800px)"
     >
       <div class="flex flex-col justify-center mx-auto">
         <h1
