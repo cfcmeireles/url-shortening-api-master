@@ -3,36 +3,35 @@
     <div
       class="grid grid-cols-1 grid-flow-row justify-center items-center w-dvw"
     >
-      <div class="flex justify-center items-center mb-12">
+      <div
+        class="flex flex-col gap-y-3 lg:flex-row justify-center items-center mb-12"
+      >
         <img
-          class="z-0 absolute bg-darkviolet rounded-md h-28"
+          class="z-0 absolute bg-darkviolet rounded-md h-36 lg:h-28"
           style="width: 1200px"
           src="/images/bg-shorten-desktop.svg"
         />
 
         <input
-          class="font-bold text-sm z-50 flex h-10 rounded-md p-5"
+          class="font-bold text-sm z-50 flex h-12 lg:h-10 rounded-md p-5"
           :class="emptyInputError || invalidUrlError ? 'error' : ''"
-          style="width: 60rem"
           v-model="userInput"
           placeholder="Shorten a link here..."
         />
         <button
-          class="z-50 rounded-md w-32 bg-cyan p-1.5 text-white h-10 ml-3.5 font-bold"
+          class="shorten-btn z-50 rounded-md w-32 bg-cyan p-1.5 text-white h-12 lg:h-10 lg:ml-3.5 font-bold"
           @click="eraseUserInput()"
         >
           Shorten it!
         </button>
         <p
-          class="z-50 absolute mt-16 text-xs italic text-red-500 font-bold"
-          style="margin-left: -1000px"
+          class="empty-error-msg z-50 absolute mt-16 text-xs italic text-red-500 font-bold"
           v-if="emptyInputError"
         >
           Please add a link
         </p>
         <p
-          class="z-50 absolute mt-16 text-xs italic text-red-500 font-bold"
-          style="margin-left: -854px"
+          class="invalid-error-msg z-50 absolute mt-16 text-xs italic text-red-500 font-bold"
           v-if="invalidUrlError"
         >
           Please add a valid link (starting with http)
@@ -157,5 +156,29 @@ button:hover {
 
 .copied:hover {
   background: hsl(257, 27%, 26%);
+}
+
+@media (max-width: 1440px) {
+  .shorten-btn {
+    width: 80%;
+  }
+}
+
+input {
+  width: 80%;
+}
+
+@media (min-width: 1440px) {
+  input {
+    width: 60rem;
+  }
+
+  .empty-error-msg {
+    margin-left: -1000px;
+  }
+
+  .invalid-error-msg {
+    margin-left: -854px;
+  }
 }
 </style>
