@@ -35,7 +35,7 @@
           style="margin-left: -854px"
           v-if="invalidUrlError"
         >
-          Please add a valid link (starting with https)
+          Please add a valid link (starting with http)
         </p>
       </div>
       <div>
@@ -98,7 +98,10 @@ export default {
           url: this.longUrl,
         }),
       };
-      if (!urlPattern.test(this.longUrl)) {
+      if (
+        !urlPattern.test(this.longUrl) ||
+        this.longUrl.startsWith("http://tinyurl")
+      ) {
         this.invalidUrlError = true;
         return;
       }
@@ -111,7 +114,9 @@ export default {
             short: data.data.tiny_url,
           });
         })
-        .catch((error) => console.error("Fetch Error:", error));
+        .catch((error) => {
+          console.error("Fetch Error:", error);
+        });
     },
     copyToClipboard(url) {
       const textToCopy = url.short;
