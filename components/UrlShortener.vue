@@ -4,10 +4,11 @@
       class="grid grid-cols-1 grid-flow-row justify-center items-center w-dvw"
     >
       <div
-        class="flex flex-col gap-y-3 lg:flex-row justify-center items-center mb-12"
+        class="flex flex-col gap-y-3 lg:flex-row justify-center items-center mb-12 relative p-3.5"
       >
         <img
           class="z-0 absolute bg-darkviolet rounded-md h-36 lg:h-28"
+          :class="emptyInputError || invalidUrlError ? 'expand-mobile' : ''"
           style="width: 1200px"
           src="/images/bg-shorten-desktop.svg"
         />
@@ -18,24 +19,25 @@
           v-model="userInput"
           placeholder="Shorten a link here..."
         />
-        <button
-          class="shorten-btn z-50 rounded-md w-32 bg-cyan p-1.5 text-white h-12 lg:h-10 lg:ml-3.5 font-bold"
-          @click="eraseUserInput()"
-        >
-          Shorten it!
-        </button>
         <p
-          class="empty-error-msg z-50 absolute mt-16 text-xs italic text-red-500 font-bold"
+          class="empty-error-msg absolute lg:mt-16 text-xs italic text-red-500 font-bold"
           v-if="emptyInputError"
         >
           Please add a link
         </p>
         <p
-          class="invalid-error-msg z-50 absolute mt-16 text-xs italic text-red-500 font-bold"
+          class="invalid-error-msg absolute lg:mt-16 text-xs italic text-red-500 font-bold"
           v-if="invalidUrlError"
         >
-          Please add a valid link (starting with http)
+          Please add a valid http link
         </p>
+        <button
+          class="shorten-btn z-50 rounded-md w-32 bg-cyan p-1.5 text-white h-12 lg:h-10 lg:ml-3.5 font-bold"
+          :class="emptyInputError || invalidUrlError ? 'error-mobile' : ''"
+          @click="eraseUserInput()"
+        >
+          Shorten it!
+        </button>
       </div>
       <div>
         <div
@@ -159,8 +161,32 @@ button:hover {
 }
 
 @media (max-width: 1440px) {
+  img {
+    width: 85% !important;
+  }
   .shorten-btn {
     width: 80%;
+  }
+
+  .error {
+    margin-top: 10px;
+  }
+
+  .error-mobile {
+    margin-top: 15px;
+  }
+  .expand-mobile {
+    height: 10rem;
+  }
+
+  .empty-error-msg {
+    padding-top: 5px;
+    left: 13.5%;
+  }
+
+  .invalid-error-msg {
+    padding-top: 5px;
+    left: 13.5%;
   }
 }
 
@@ -178,7 +204,7 @@ input {
   }
 
   .invalid-error-msg {
-    margin-left: -854px;
+    margin-left: -943px;
   }
 }
 </style>
