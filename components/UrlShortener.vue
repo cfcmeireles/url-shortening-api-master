@@ -4,7 +4,7 @@
       class="grid grid-cols-1 grid-flow-row justify-center items-center w-dvw"
     >
       <div
-        class="flex flex-col gap-y-3 lg:flex-row justify-center items-center mb-12 relative p-3.5"
+        class="flex flex-col gap-y-3 lg:flex-row justify-center items-center mb-12 relative p-3.5 lg:p-0"
       >
         <img
           class="z-0 absolute bg-darkviolet rounded-md h-36 lg:h-28"
