@@ -7,32 +7,32 @@
         class="flex flex-col gap-y-3 lg:flex-row justify-center items-center mb-12 relative p-3.5 lg:p-0"
       >
         <img
-          class="z-0 absolute bg-darkviolet rounded-md h-36 lg:h-28"
+          class="z-0 absolute bg-darkviolet rounded-lg h-36 lg:h-30"
           :class="emptyInputError || invalidUrlError ? 'expand-mobile' : ''"
           style="width: 1200px"
           src="/images/bg-shorten-desktop.svg"
         />
 
         <input
-          class="font-bold text-sm z-50 flex h-12 lg:h-10 rounded-md p-5"
+          class="font-normal text-sm z-50 flex h-12 lg:h-14 rounded-md p-5"
           :class="emptyInputError || invalidUrlError ? 'error' : ''"
           v-model="userInput"
           placeholder="Shorten a link here..."
         />
         <p
-          class="empty-error-msg absolute lg:mt-16 text-xs italic text-red-500 font-bold"
+          class="empty-error-msg absolute lg:mt-20 text-xs italic text-red-500 font-bold"
           v-if="emptyInputError"
         >
           Please add a link
         </p>
         <p
-          class="invalid-error-msg absolute lg:mt-16 text-xs italic text-red-500 font-bold"
+          class="invalid-error-msg absolute lg:mt-20 text-xs italic text-red-500 font-bold"
           v-if="invalidUrlError"
         >
           Please add a valid http link
         </p>
         <button
-          class="shorten-btn z-50 rounded-md w-32 bg-cyan p-1.5 text-white h-12 lg:h-10 lg:ml-3.5 font-bold"
+          class="shorten-btn z-50 rounded-md w-36 bg-cyan p-2.5 text-white h-12 lg:h-14 lg:ml-3.5 font-bold"
           :class="emptyInputError || invalidUrlError ? 'error-mobile' : ''"
           @click="eraseUserInput()"
         >
@@ -43,13 +43,22 @@
         <div
           v-for="(url, index) in saveUrl"
           :key="index"
-          class="h-16 rounded-md bg-white mx-auto font-bold mt-3.5 p-5 text-sm flex items-center relative"
+          class="h-16 rounded-md bg-white mx-auto font-normal mt-3.5 p-5 text-sm flex items-center relative"
           style="width: 1200px"
         >
-          {{ url.long }}
-          <span class="text-cyan absolute right-32">{{ url.short }}</span>
+          <div
+            class="pr-96"
+            style="
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            "
+          >
+            {{ url.long }}
+          </div>
+          <span class="text-cyan absolute right-36">{{ url.short }}</span>
           <button
-            class="z-50 rounded-md w-24 bg-cyan p-1.5 text-white font-bold absolute right-5"
+            class="z-50 rounded-md w-24 bg-cyan p-2 text-white font-bold absolute right-5"
             :class="url.isCopied ? 'copied' : ''"
             @click="copyToClipboard(url)"
           >
@@ -200,11 +209,11 @@ input {
   }
 
   .empty-error-msg {
-    margin-left: -1000px;
+    margin-left: -1010px;
   }
 
   .invalid-error-msg {
-    margin-left: -943px;
+    margin-left: -948px;
   }
 }
 </style>

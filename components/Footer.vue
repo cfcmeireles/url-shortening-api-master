@@ -18,7 +18,7 @@
         <template #third-item>Support</template>
       </FooterList>
       <FooterList>
-        <template #title>About</template>
+        <template #title>Company</template>
         <template #first-item>About</template>
         <template #second-item>Our Team</template>
         <template #third-item>Careers</template>

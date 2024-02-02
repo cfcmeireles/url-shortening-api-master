@@ -26,8 +26,10 @@
       />
     </div>
 
-    <h3 class="text-xl font-bold mt-8"><slot name="title"></slot></h3>
-    <p class="text-gray mt-5 font-bold">
+    <h3 class="text-xl font-bold mt-8 text-verydarkviolet">
+      <slot name="title"></slot>
+    </h3>
+    <p class="text-gray mt-5 font-normal">
       <slot name="description"></slot>
     </p>
   </div>

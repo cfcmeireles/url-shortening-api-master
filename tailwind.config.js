@@ -27,6 +27,7 @@ export default {
         darkviolet: "#3b3054",
         grayviolet: "#9e9aa7",
         blackviolet: "#232027",
+        verydarkviolet: "#232127",
       },
       fontSize: {
         base: "18px",

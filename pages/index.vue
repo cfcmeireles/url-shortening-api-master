@@ -3,22 +3,20 @@
     <Header />
     <div
       class="flex flex-col-reverse lg:flex-col items-center lg:grid lg:justify-center"
-      style="grid-template-columns: repeat(2, 800px)"
+      style="grid-template-columns: repeat(2, 750px)"
     >
       <div class="flex flex-col justify-center mx-auto">
         <h1
-          class="font-bold text-3xl mt-8 lg:mt-0 lg:text-6xl lg:flex lg:justify-center"
+          class="font-bold text-3xl mt-8 lg:mt-0 lg:text-6xl lg:flex lg:justify-center text-verydarkviolet ,"
         >
           More than just <br />shorter links
         </h1>
-        <p
-          class="text-3xl text-gray font-bold text-base mb-5 lg:mb-0 lg:justify-center lg:flex"
-        >
+        <p class="text-3xl text-gray text-base mb-5 lg:mb-0 lg:justify-center">
           Build your brand's recognition and get detailed <br />insights on how
           your links are performing.
         </p>
         <button
-          class="rounded-2xl w-32 mt-3 bg-cyan p-1.5 text-white font-bold"
+          class="rounded-3xl w-40 mt-3 bg-cyan p-2.5 text-white font-bold"
         >
           Get Started
         </button>
@@ -33,8 +31,10 @@
     </div>
     <UrlShortener />
     <div class="text-center mt-20">
-      <h2 class="text-3xl font-bold">Advanced Statistics</h2>
-      <p class="text-gray font-bold mt-5">
+      <h2 class="text-3xl font-bold text-verydarkviolet">
+        Advanced Statistics
+      </h2>
+      <p class="text-gray font-normal mt-5">
         Track how your links are performing across the web with <br />our
         advanced statistics dashboard.
       </p>
@@ -65,12 +65,14 @@
         </template>
       </BoxFrames>
     </div>
-    <div class="mt-24 relative flex items-center justify-center">
-      <h2 class="text-3xl font-bold text-white absolute bottom-24">
+    <div class="mt-24 relative flex flex-col items-center justify-center">
+      <h2
+        class="text-3xl font-bold text-white items-center justify-center absolute mb-12"
+      >
         Boost your links today
       </h2>
       <button
-        class="rounded-2xl w-32 bg-cyan p-1.5 text-white font-bold absolute bottom-12"
+        class="rounded-3xl w-40 bg-cyan p-2.5 text-white items-center justify-center absolute mt-16"
       >
         Get Started
       </button>
