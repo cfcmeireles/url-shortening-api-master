@@ -106,7 +106,8 @@ useSeoMeta({
   ogTitle: "URL shortening API",
   description: "URL shortening tool using TinyURL OpenAPI",
   ogDescription: "URL shortening tool using TinyURL OpenAPI",
-  ogImage: "/design/desktop-design.jpg",
+  ogImage: "https://i.imgur.com/oxGcXZn.png",
+  ogUrl: "https://url-shortening-api-cm.netlify.app/",
 });
 
 const elementToScroll = ref(null);
