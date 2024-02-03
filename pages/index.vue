@@ -1,4 +1,5 @@
 <template>
+  <title>URL shortening API</title>
   <main class="font-poppins h-screen">
     <Header />
     <div
@@ -104,11 +105,6 @@ export default {
       const element = this.$refs.elementToScroll;
       element.scrollIntoView({ behavior: "smooth" });
     },
-  },
-  head() {
-    return {
-      title: "URL shortening API",
-    };
   },
 };
 </script>
