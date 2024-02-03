@@ -1,5 +1,5 @@
 <template>
-  <main class="h-46 lg:h-96 bg-blackviolet">
+  <div class="h-46 lg:h-96 bg-blackviolet">
     <div
       class="flex flex-col items-center lg:items-start text-center lg:text-left lg:grid pt-20 justify-center"
       style="grid-template-columns: 300px 200px 200px 200px 300px"
@@ -79,7 +79,7 @@
         >Carina Meireles</a
       >.
     </div>
-  </main>
+  </div>
 </template>
 
 <style>

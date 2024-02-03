@@ -1,5 +1,7 @@
 <template>
-  <title>URL shortening API</title>
+  <head>
+    <title>URL shortening API</title>
+  </head>
   <main class="font-poppins h-screen">
     <Header />
     <div
@@ -91,6 +93,7 @@
         <img
           class="w-full h-48 bg-darkviolet"
           src="/images/bg-boost-desktop.svg"
+          alt="Background Image"
         />
       </div>
     </div>

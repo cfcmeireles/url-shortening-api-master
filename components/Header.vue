@@ -1,5 +1,5 @@
 <template >
-  <main class="mt-5 mb-10 font-poppins font-bold">
+  <div class="mt-5 mb-10 font-poppins font-bold">
     <div class="header hidden lg:grid lg:justify-center">
       <div class="flex flex-row justify-start gap-8 items-center">
         <img src="/images/logo.svg" />
@@ -53,7 +53,7 @@
         </ul>
       </div>
     </div>
-  </main>
+  </div>
 </template>
 
 <script>

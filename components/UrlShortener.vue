@@ -1,5 +1,5 @@
 <template>
-  <main class="mt-20">
+  <div class="mt-20">
     <div
       class="grid grid-cols-1 grid-flow-row justify-center items-center w-dvw"
     >
@@ -71,7 +71,7 @@
         </div>
       </div>
     </div>
-  </main>
+  </div>
 </template>
 
 <script>
