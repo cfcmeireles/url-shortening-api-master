@@ -4,7 +4,7 @@
       class="grid grid-cols-1 grid-flow-row justify-center items-center w-dvw"
     >
       <div
-        class="flex flex-col gap-y-3 lg:flex-row justify-center items-center mb-12 relative p-3.5 lg:p-0"
+        class="flex flex-col gap-y-3 lg:flex-row justify-center items-center lg:mb-12 relative p-3.5 lg:p-0"
       >
         <img
           class="z-0 absolute bg-darkviolet rounded-lg h-36 lg:h-30"
@@ -43,11 +43,11 @@
         <div
           v-for="(url, index) in saveUrl"
           :key="index"
-          class="h-16 rounded-md bg-white mx-auto font-normal mt-3.5 p-5 text-sm flex items-center relative"
+          class="url h-26 py-3 lg:h-16 rounded-md bg-white mx-auto font-normal lg:mt-3.5 lg:p-5 text-sm lg:flex lg:items-center lg:relative"
           style="width: 1200px"
         >
           <div
-            class="pr-96"
+            class="lg:pr-96 mb-2 lg:mb-0 pl-3 pr-3"
             style="
               overflow: hidden;
               text-overflow: ellipsis;
@@ -56,9 +56,13 @@
           >
             {{ url.long }}
           </div>
-          <span class="text-cyan absolute right-36">{{ url.short }}</span>
+          <div class="line bg-gray mb-2"></div>
+          <span
+            class="text-cyan lg:absolute lg:right-36 mb-2 lg:mb-0 pl-3 pr-3"
+            >{{ url.short }}</span
+          >
           <button
-            class="z-50 rounded-md w-24 bg-cyan p-2 text-white font-bold absolute right-5"
+            class="z-50 rounded-md lg:w-24 bg-cyan p-2 text-white font-bold lg:absolute right-5 ml-3 mr-3"
             :class="url.isCopied ? 'copied' : ''"
             @click="copyToClipboard(url)"
           >
@@ -149,8 +153,10 @@ export default {
 </script>
 
 <style scoped>
-button:hover {
-  background: hsl(180, 80%, 80%);
+@media (min-width: 1440px) {
+  button:hover {
+    background: hsl(180, 80%, 80%);
+  }
 }
 .error {
   border: solid red 2px;
@@ -170,7 +176,8 @@ button:hover {
 }
 
 @media (max-width: 1440px) {
-  img {
+  img,
+  .url {
     width: 85% !important;
   }
   .shorten-btn {
@@ -196,6 +203,20 @@ button:hover {
   .invalid-error-msg {
     padding-top: 5px;
     left: 13.5%;
+  }
+
+  /* .url:first-child {
+    margin-top: -20px;
+  } */
+  .url {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .line {
+    height: 0.1px;
   }
 }
 

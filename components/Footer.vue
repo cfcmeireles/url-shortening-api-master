@@ -1,10 +1,10 @@
 <template>
-  <main class="h-96 bg-blackviolet">
+  <main class="h-46 lg:h-96 bg-blackviolet">
     <div
-      class="grid pt-20 justify-center"
+      class="flex flex-col items-center lg:items-start text-center lg:text-left lg:grid pt-20 justify-center"
       style="grid-template-columns: 300px 200px 200px 200px 300px"
     >
-      <img src="/images/logo-white.svg" />
+      <img src="/images/logo-white.svg" class="h-7 w-24 mb-10 lg:mb-0" />
       <FooterList>
         <template #title>Features</template>
         <template #first-item>Link Shortening</template>
@@ -24,7 +24,7 @@
         <template #third-item>Careers</template>
         <template #fourth-item>Contact</template>
       </FooterList>
-      <div class="flex flex-row gap-x-5 justify-end">
+      <div class="flex flex-row gap-x-5 justify-end mt-5 lg:mt-0">
         <svg
           class="cursor-pointer"
           xmlns="http://www.w3.org/2000/svg"

@@ -1,5 +1,5 @@
 <template>
-  <ul class="text-white font-bold">
+  <ul class="text-white font-bold mb-5 lg:mb-0">
     <slot name="title"></slot>
     <li
       class="text-gray hover:text-cyan font-normal cursor-pointer mt-5 mb-3 text-sm"
