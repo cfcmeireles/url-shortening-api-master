@@ -11,7 +11,6 @@
           :class="emptyInputError || invalidUrlError ? 'expand-mobile' : ''"
           style="width: 1200px"
           src="/images/bg-shorten-desktop.svg"
-          alt="Background Image"
         />
 
         <input

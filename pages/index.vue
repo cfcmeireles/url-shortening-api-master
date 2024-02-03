@@ -91,7 +91,6 @@
         <img
           class="w-full h-48 bg-darkviolet"
           src="/images/bg-boost-desktop.svg"
-          alt="Background Image"
         />
       </div>
     </div>

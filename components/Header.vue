@@ -1,21 +1,38 @@
-<template >
+<template>
   <div class="mt-5 mb-10 font-poppins font-bold">
     <div class="header hidden lg:grid lg:justify-center">
       <div class="flex flex-row justify-start gap-8 items-center">
         <img src="/images/logo.svg" />
-        <button class="header-btn text-gray font-bold text-sm">Features</button>
-        <button class="header-btn text-gray font-bold text-sm">Pricing</button>
-        <button class="header-btn text-gray font-bold text-sm">
+        <a
+          href="#"
+          class="header-btn text-gray font-bold text-sm cursor-pointer"
+          >Features</a
+        >
+        <a
+          href="#"
+          class="header-btn text-gray font-bold text-sm cursor-pointer"
+          >Pricing</a
+        >
+        <a
+          href="#"
+          class="header-btn text-gray font-bold text-sm cursor-pointer"
+        >
           Resources
-        </button>
+        </a>
       </div>
       <div class="flex flex-row justify-end items-center gap-8">
-        <button class="header-btn text-gray font-bold text-sm">Login</button>
-        <button
-          class="signup-btn rounded-3xl w-24 bg-cyan p-2.5 text-white font-bold text-sm"
+        <a
+          href="#"
+          class="header-btn text-gray font-bold text-sm cursor-pointer"
+          >Login</a
         >
-          Sign up
-        </button>
+        <a href="#">
+          <button
+            class="signup-btn rounded-3xl w-24 bg-cyan p-2.5 text-white font-bold text-sm"
+          >
+            Sign up
+          </button>
+        </a>
       </div>
     </div>
     <div
@@ -41,10 +58,10 @@
       </div>
       <div class="hamburger-dropdown cursor-pointer">
         <ul class="hidden text-grayviolet">
-          <li>Features</li>
-          <li>Pricing</li>
-          <li>Resources</li>
-          <li>Login</li>
+          <li><a href="#">Features </a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="#">Login</a></li>
           <li
             class="rounded-3xl w-24 bg-cyan p-2.5 text-white font-bold text-sm text-center"
           >
