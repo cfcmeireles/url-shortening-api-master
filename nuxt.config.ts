@@ -13,4 +13,5 @@ export default {
       autoprefixer: {},
     },
   },
+  buildModules: ["@nuxtjs/meta"],
 };

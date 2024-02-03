@@ -105,6 +105,16 @@ export default {
       element.scrollIntoView({ behavior: "smooth" });
     },
   },
+  head() {
+    return {
+      meta: [
+        {
+          property: "og:image",
+          content: "/design/desktop-design.jpg",
+        },
+      ],
+    };
+  },
 };
 </script>
 
