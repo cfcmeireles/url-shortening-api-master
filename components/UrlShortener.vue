@@ -244,4 +244,14 @@ input {
     margin-left: -948px;
   }
 }
+
+@media (min-width: 500px) and (max-width: 1439px) {
+  .empty-error-msg {
+    left: 11.5%;
+  }
+
+  .invalid-error-msg {
+    left: 11.5%;
+  }
+}
 </style>

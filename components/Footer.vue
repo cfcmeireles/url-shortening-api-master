@@ -87,8 +87,10 @@ svg {
   fill: white;
 }
 
-svg:hover {
-  fill: cyan;
+@media (min-width: 1440px) {
+  svg:hover {
+    fill: cyan;
+  }
 }
 
 .attribution {
