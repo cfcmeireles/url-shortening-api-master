@@ -105,6 +105,11 @@ export default {
       element.scrollIntoView({ behavior: "smooth" });
     },
   },
+  head() {
+    return {
+      title: "URL shortening API",
+    };
+  },
 };
 </script>
 
