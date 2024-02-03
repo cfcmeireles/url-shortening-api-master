@@ -54,7 +54,7 @@
         <BoxFrames :icons="{ brandRecognition: true }">
           <template #title>Brand Recognition</template>
           <template #description>
-            Boost your brand recognition with eachclick. Generic links don't
+            Boost your brand recognition with each click. Generic links don't
             mean a thing. Branded links help instil confidence in your
             content.</template
           >
