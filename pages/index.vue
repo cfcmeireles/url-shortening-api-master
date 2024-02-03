@@ -1,7 +1,4 @@
 <template>
-  <head>
-    <title>URL shortening API</title>
-  </head>
   <main class="font-poppins h-screen">
     <Header />
     <div
@@ -101,14 +98,24 @@
   </main>
 </template>
 
-<script>
-export default {
-  methods: {
-    scrollToUrlShortener() {
-      const element = this.$refs.elementToScroll;
-      element.scrollIntoView({ behavior: "smooth" });
-    },
-  },
+<script setup>
+import { ref } from "vue";
+
+useSeoMeta({
+  title: "URL shortening API",
+  ogTitle: "URL shortening API",
+  description: "URL shortening tool using TinyURL OpenAPI",
+  ogDescription: "URL shortening tool using TinyURL OpenAPI",
+  ogImage: "/design/desktop-design.jpg",
+});
+
+const elementToScroll = ref(null);
+
+const scrollToUrlShortener = () => {
+  const element = elementToScroll.value;
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  }
 };
 </script>
 
