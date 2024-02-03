@@ -11,6 +11,7 @@
           :class="emptyInputError || invalidUrlError ? 'expand-mobile' : ''"
           style="width: 1200px"
           src="/images/bg-shorten-desktop.svg"
+          alt="Background Image"
         />
 
         <input
@@ -85,7 +86,12 @@ export default {
       invalidUrlError: false,
     };
   },
-
+  mounted() {
+    const urlJSON = localStorage.getItem("saveUrl");
+    if (urlJSON) {
+      this.saveUrl = JSON.parse(urlJSON);
+    }
+  },
   methods: {
     eraseUserInput() {
       if (this.userInput) {
@@ -127,6 +133,7 @@ export default {
             long: this.longUrl,
             short: data.data.tiny_url,
           });
+          localStorage.setItem("saveUrl", JSON.stringify(this.saveUrl));
         })
         .catch((error) => {
           console.error("Fetch Error:", error);
