@@ -26,7 +26,6 @@
       </div>
       <div>
         <img
-          style="height: 40%"
           src="/images/illustration-working.svg"
           alt="Working illustration"
           class="ml-14 lg:ml-0"

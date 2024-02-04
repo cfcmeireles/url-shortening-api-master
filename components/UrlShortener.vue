@@ -4,7 +4,7 @@
       class="grid grid-cols-1 grid-flow-row justify-center items-center w-dvw"
     >
       <div
-        class="flex flex-col gap-y-3 lg:flex-row justify-center items-center lg:mb-12 relative p-3.5 lg:p-0"
+        class="flex flex-col lg:flex-row justify-center items-center lg:mb-12 relative lg:p-0"
       >
         <img
           class="z-0 absolute bg-darkviolet rounded-lg h-36 lg:h-30"
@@ -12,13 +12,24 @@
           style="width: 1200px"
           src="/images/bg-shorten-desktop.svg"
         />
-
-        <input
-          class="font-normal text-sm z-50 flex h-12 lg:h-14 rounded-md p-5"
-          :class="emptyInputError || invalidUrlError ? 'error' : ''"
-          v-model="userInput"
-          placeholder="Shorten a link here..."
-        />
+        <form
+          class="font-normal text-sm z-50 flex flex-col lg:flex-row items-center gap-y-3 pb-3.5 lg:pb-0"
+          v-on:submit.prevent="eraseUserInput()"
+        >
+          <label for="input"> </label>
+          <input
+            class="shorten-link h-12 lg:h-14 rounded-md p-5"
+            :class="emptyInputError || invalidUrlError ? 'error' : ''"
+            v-model="userInput"
+            placeholder="Shorten a link here..."
+          />
+          <input
+            type="submit"
+            value="Shorten it!"
+            class="shorten-btn z-50 rounded-md bg-cyan p-2.5 text-white h-12 lg:h-14 lg:ml-3.5 font-bold cursor-pointer"
+            :class="emptyInputError || invalidUrlError ? 'error-mobile' : ''"
+          />
+        </form>
         <p
           class="empty-error-msg absolute lg:mt-20 text-xs italic text-red-500 font-bold"
           v-if="emptyInputError"
@@ -31,13 +42,6 @@
         >
           Please add a valid http link
         </p>
-        <button
-          class="shorten-btn z-50 rounded-md w-36 bg-cyan p-2.5 text-white h-12 lg:h-14 lg:ml-3.5 font-bold"
-          :class="emptyInputError || invalidUrlError ? 'error-mobile' : ''"
-          @click="eraseUserInput()"
-        >
-          Shorten it!
-        </button>
       </div>
       <div>
         <div
@@ -186,8 +190,16 @@ export default {
   .url {
     width: 85% !important;
   }
+
+  form {
+    width: 100%;
+  }
+
+  .shorten-link {
+    width: 77%;
+  }
   .shorten-btn {
-    width: 80%;
+    width: 77%;
   }
 
   .error {
@@ -211,9 +223,6 @@ export default {
     left: 13.5%;
   }
 
-  /* .url:first-child {
-    margin-top: -20px;
-  } */
   .url {
     margin-top: 20px;
     display: flex;
@@ -226,13 +235,12 @@ export default {
   }
 }
 
-input {
-  width: 80%;
-}
-
 @media (min-width: 1440px) {
-  input {
+  .shorten-link {
     width: 60rem;
+  }
+  .shorten-btn {
+    width: 9rem;
   }
 
   .empty-error-msg {
