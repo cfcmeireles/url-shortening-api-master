@@ -13,7 +13,7 @@
           src="/images/bg-shorten-desktop.svg"
         />
         <form
-          class="font-normal text-sm z-50 flex flex-col lg:flex-row items-center gap-y-3 pb-3.5 lg:pb-0"
+          class="font-normal text-sm z-50 flex flex-col lg:flex-row items-center justify-center gap-y-3 pb-3.5 lg:pb-0"
           v-on:submit.prevent="eraseUserInput()"
         >
           <label for="input"> </label>
