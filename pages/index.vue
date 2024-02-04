@@ -3,19 +3,19 @@
     <Header />
     <div
       class="flex flex-col-reverse lg:flex-col items-center lg:grid lg:justify-center"
-      style="grid-template-columns: repeat(2, 750px)"
+      style="grid-template-columns: repeat(2, 600px)"
     >
       <div class="flex flex-col justify-center mx-auto">
         <h1
           class="font-bold text-3xl mt-8 lg:mt-0 lg:text-6xl lg:flex lg:justify-center text-verydarkviolet"
         >
-          More than just <br />shorter links
+          More than just shorter links
         </h1>
         <p
-          class="m-5 lg:m-0 text-gray text-sm lg:text-base mb-5 lg:mb-0 lg:justify-center leading-6 lg:leading-10"
+          class="m-5 lg:m-0 text-gray text-sm lg:text-base mb-5 lg:mb-0 lg:justify-center leading-6 lg:leading-10 lg:pr-28"
         >
-          Build your brand's recognition and get detailed <br />insights on how
-          your links are performing.
+          Build your brand's recognition and get detailed insights on how your
+          links are performing.
         </p>
         <button
           class="get-started-btn rounded-3xl w-40 mt-3 bg-cyan p-2.5 text-white font-bold"
@@ -36,15 +36,15 @@
       <div ref="elementToScroll">
         <UrlShortener />
       </div>
-      <div class="text-center mt-20">
+      <div class="text-center mt-20 lg:w-4/12 lg:mx-auto">
         <h2 class="text-2xl lg:text-3xl font-bold text-verydarkviolet mb-2">
           Advanced Statistics
         </h2>
         <p
           class="text-gray font-normal mt-5 text-sm lg:text-base m-5 lg:m-0 leading-6 lg:leading-10"
         >
-          Track how your links are performing across the web with <br />our
-          advanced statistics dashboard.
+          Track how your links are performing across the web with our advanced
+          statistics dashboard.
         </p>
       </div>
       <div
